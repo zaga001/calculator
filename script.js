@@ -11,3 +11,16 @@ function operate(num1, operator, num2) {
     if (operator === multiply) return multiply(num1, num2);
     if (operator === divide) return divide(num1, num2);
 }
+
+let displayArray = [];
+let displayValue;
+let display = document.querySelector('.display');
+const buttons = document.querySelectorAll('.buttons button');
+
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        displayArray.push(button.textContent)
+        displayValue = displayArray.join('');
+        display.textContent = displayValue;
+    })
+})
